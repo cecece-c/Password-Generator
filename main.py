@@ -2,23 +2,23 @@
 import random, time
 
 
-# List all alphabets, lowercase and uppercase, and store values in 'letters' (List - String)
+# Store all alphabets, lowercase and uppercase, in 'letters' (List - String)
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 
-# List all numbers from 0-9 and store values in 'numbers' (List - String)
+# Store all numbers from 0-9 in 'numbers' (List - String)
 numbers = ["0", "1" , "2", "3", "4", "5", "6", "7", "8", "9"]
 
 
-# List some symbols and store values in 'symbols' (List - String)
+# Store some symbols in 'symbols' (List - String)
 symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"]
 
 
-# Display banner
+# Display welcome message
 print("\nWelcome to the PyPassword Generator!")
 
 
-# Get number of letters, number of numbers and number of symbols, and store values in 'number_of_letters' (Integer), 'number_of_numbers' (Integer) and 'number_of_symbols' (Integer) respectively
+# Get number of letters, number of numbers and number of symbols, and store it in 'number_of_letters' (Integer), 'number_of_numbers' (Integer) and 'number_of_symbols' (Integer) respectively
 while True:
     try:
         number_of_letters = int(input("\nHow many letters would you like in your password (0 - 52)?\n"))
@@ -38,7 +38,7 @@ while True:
         print("\nInvalid input. Only integers are accepted.")
 
 
-# Add and shuffle password contents to generate password. Display password afterwards
+# Add password contents based on requirements and shuffle it to generate password
 password = []
 random.shuffle(letters)
 random.shuffle(numbers)
@@ -51,10 +51,16 @@ for s in symbols[0:number_of_symbols]:
     password.append(s)
 random.shuffle(password)
 password = "".join(password)
+
+
+# Display password
 print(f"\nHere is your password:\n{password}")
 
 
-# Exit program
+# Display exit message
 print("\nProgram exiting...")
+
+
+# Exit program after 5 second delay
 for delay in range(5):
     time.sleep(1)
