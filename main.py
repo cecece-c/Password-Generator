@@ -51,7 +51,7 @@ for s in symbols[0:number_of_symbols]:
     password.append(s)
 random.shuffle(password)
 password = "".join(password)
-print(f"\nHere is your password: {password}")
+print(f"\nHere is your password:\n{password}")
 
 
 # Exit program
